@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: mint
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,8 +37,7 @@ jobs:
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
-
+          path: 'target/dx/nomadlibre-website/release/web/public'
   deploy:
     environment:
       name: github-pages
