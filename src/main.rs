@@ -8,8 +8,11 @@ fn main() {
 #[component]
 fn App() -> Element {
     rsx! {
+        // Viewport tag for mobile responsiveness
+        document::Meta { name: "viewport", content: "width=device-width, initial-scale=1.0" }
+
         // SEO, Security, and Favicon
-        document::Link { rel: "icon", href: "https://github.com/NomadLibre.png" }
+        document::Link { rel: "icon", href: asset!("/assets/logo.png") }
         document::Meta { name: "description", content: "NomadLibre: Libre software that moves with you. Building stable, cross-platform utilities in Rust." }
         document::Meta { name: "keywords", content: "Rust, Open Source, Dioxus, Linux, Fedora, DevOps, Libre Software" }
         document::Meta { property: "og:title", content: "NomadLibre Studio" }
