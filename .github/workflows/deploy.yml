@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build-and-deploy:
-    runs-on: self-hosted
+    runs-on: rust-container
 
     environment:
       name: github-pages
@@ -34,17 +34,11 @@ jobs:
       - name: Set up Rust cache
         uses: Swatinem/rust-cache@v2
 
-      - name: Install Dioxus CLI
-        run: cargo install dioxus-cli
-
       - name: Check Formatting
         run: cargo fmt -- --check
 
       - name: Run Clippy
         run: cargo clippy --release -- -D warnings
-
-      - name: Install Cargo Audit
-        run: cargo install cargo-audit
 
       - name: Run Vulnerability Scan
         run: cargo audit

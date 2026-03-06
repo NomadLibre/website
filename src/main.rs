@@ -12,19 +12,20 @@ fn App() -> Element {
         document::Meta { name: "viewport", content: "width=device-width, initial-scale=1.0" }
 
         // SEO, Security, and Favicon
+        // SEO, Security, and Local Favicon
         document::Link { rel: "icon", href: asset!("/assets/logo.png") }
         document::Meta { name: "description", content: "NomadLibre: Libre software that moves with you. Building stable, cross-platform utilities in Rust." }
         document::Meta { name: "keywords", content: "Rust, Open Source, Dioxus, Linux, Fedora, DevOps, Libre Software" }
         document::Meta { property: "og:title", content: "NomadLibre Studio" }
         document::Meta { property: "og:description", content: "Libre software that moves with you, across every device you own." }
-        document::Meta { property: "og:image", content: "https://github.com/NomadLibre.png" }
+        document::Meta { property: "og:image", content: asset!("/assets/logo.png") }
         document::Meta { property: "og:url", content: "https://nomadlibre.studio" }
         document::Meta { property: "og:type", content: "website" }
         document::Meta {
             "http-equiv": "Content-Security-Policy",
-            content: "default-src 'self'; img-src 'self' https://github.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'wasm-unsafe-eval';"
+            content: "default-src 'self'; img-src 'self' data: https://github.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'wasm-unsafe-eval';"
         }
-
+        
         document::Stylesheet { href: asset!("/assets/tailwind.css") }
 
         // Main Background: Gruvbox Dark (bg0), Text: Gruvbox Light (fg)
@@ -35,7 +36,7 @@ fn App() -> Element {
 
                 // Logo and Name
                 div { class: "flex items-center gap-4",
-                    img { src: "https://github.com/NomadLibre.png", alt: "NomadLibre Logo", class: "w-10 h-10 border-2 border-[#1d2021] bg-white" }
+                    img { src: asset!("/assets/logo.png"), alt: "NomadLibre Logo", class: "w-10 h-10 border-2 border-[#1d2021] bg-white" }
                     div { class: "font-bold text-2xl tracking-tighter text-[#fabd2f]", "NomadLibre" }
                 }
 
