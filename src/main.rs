@@ -25,7 +25,7 @@ fn App() -> Element {
             "http-equiv": "Content-Security-Policy",
             content: "default-src 'self'; img-src 'self' data: https://github.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'wasm-unsafe-eval';"
         }
-        
+
         document::Stylesheet { href: asset!("/assets/tailwind.css") }
 
         // Main Background: Gruvbox Dark (bg0), Text: Gruvbox Light (fg)
