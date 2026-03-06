@@ -8,6 +8,20 @@ fn main() {
 #[component]
 fn App() -> Element {
     rsx! {
+        // SEO, Security, and Favicon
+        document::Link { rel: "icon", href: "https://github.com/NomadLibre.png" }
+        document::Meta { name: "description", content: "NomadLibre: Libre software that moves with you. Building stable, cross-platform utilities in Rust." }
+        document::Meta { name: "keywords", content: "Rust, Open Source, Dioxus, Linux, Fedora, DevOps, Libre Software" }
+        document::Meta { property: "og:title", content: "NomadLibre Studio" }
+        document::Meta { property: "og:description", content: "Libre software that moves with you, across every device you own." }
+        document::Meta { property: "og:image", content: "https://github.com/NomadLibre.png" }
+        document::Meta { property: "og:url", content: "https://nomadlibre.studio" }
+        document::Meta { property: "og:type", content: "website" }
+        document::Meta {
+            "http-equiv": "Content-Security-Policy",
+            content: "default-src 'self'; img-src 'self' https://github.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'wasm-unsafe-eval';"
+        }
+        
         document::Stylesheet { href: asset!("/assets/tailwind.css") }
         
         // Main Background: Gruvbox Dark (bg0), Text: Gruvbox Light (fg)
@@ -18,7 +32,6 @@ fn App() -> Element {
                 
                 // Logo and Name
                 div { class: "flex items-center gap-4",
-                    // Using GitHub's automatic avatar routing for your org as the logo
                     img { src: "https://github.com/NomadLibre.png", alt: "NomadLibre Logo", class: "w-10 h-10 border-2 border-[#1d2021] bg-white" }
                     div { class: "font-bold text-2xl tracking-tighter text-[#fabd2f]", "NomadLibre" }
                 }
@@ -72,10 +85,10 @@ fn App() -> Element {
                         p { class: "font-bold", "I needed a stack that compiles to everything: Win, Mac, Linux (RPM/DEB/Flatpak), FreeBSD, iOS, Android, and WebAssembly. Memory safety is just a bonus." }
                     }
 
-                    // Block 2 - Gruvbox Red (Solo Dev / Hiring)
-                    div { class: "border-4 border-[#1d2021] bg-[#fb4934] text-[#282828] p-8 shadow-[8px_8px_0px_0px_#1d2021]",
+                    // Block 2 - Neutral Beige (Solo Dev / Hiring)
+                    div { class: "border-4 border-[#1d2021] bg-[#ebdbb2] text-[#282828] p-8 shadow-[8px_8px_0px_0px_#1d2021]",
                         h2 { class: "text-2xl font-bold mb-2 uppercase", "Team Size: 1" }
-                        p { class: "font-bold", "I am a solo developer currently in a bit of a money crunch. I absolutely do not expect free work (not even for an intern!), so it is just me building this out right now. If you want to support, starring the repos helps a lot! :)" }
+                        p { class: "font-bold", "I am a solo developer currently in a bit of a money crunch. I absolutely do not expect free work (not even for an intern!), so it is just me building this out right now. If you want to support, starring the repos helps a lot!" }
                     }
 
                     // Block 3 - Gruvbox Green (Tutorials)
