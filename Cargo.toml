@@ -4,14 +4,12 @@ version = "0.1.0"
 authors = ["Arijit Pal <arijitpaljit@gmail.com>"]
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-dioxus = { version = "0.7.1", features = ["router", "web"] }
+dioxus = { version = "0.7.3", features = ["router", "web"] }
 
-[features]
-default = ["web"]
-web = ["dioxus/web"]
-desktop = ["dioxus/desktop"]
-mobile = ["dioxus/mobile"]
-server = ["dioxus/server"]
+# Optimize for file size and strip DWARF debug info to prevent wasm-opt crashes
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
