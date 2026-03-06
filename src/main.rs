@@ -53,7 +53,7 @@ fn App() -> Element {
                 
                 // Hero Section - Gruvbox Yellow
                 header { class: "border-4 border-[#1d2021] bg-[#fabd2f] text-[#282828] p-8 md:p-12 mb-8 shadow-[8px_8px_0px_0px_#1d2021]",
-                    h1 { class: "text-4xl md:text-5xl font-bold mb-6 uppercase tracking-tight", "Something pretty boring opensource project is in the making." }
+                    h1 { class: "text-4xl md:text-5xl font-bold mb-6 uppercase tracking-tight", "Pretty boring opensource project is in the making." }
                     
                     // The Tagline
                     div { class: "inline-block border-4 border-[#1d2021] bg-[#282828] text-[#ebdbb2] p-3 mb-6 shadow-[4px_4px_0px_0px_#1d2021]",

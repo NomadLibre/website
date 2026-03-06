@@ -1,50 +1,34 @@
-# Development
+# NomadLibre Website
 
-Your new bare-bones project includes minimal organization with a single `main.rs` file and a few assets.
+**Libre software that moves with you, across every device you own.**
 
-```
-project/
-├─ assets/ # Any assets that are used by the app should be placed here
-├─ src/
-│  ├─ main.rs # main.rs is the entry point to your application and currently contains all components for the app
-├─ Cargo.toml # The Cargo.toml file defines the dependencies and feature flags for your project
-```
+This is the source code for the official NomadLibre landing page, built with Rust, Dioxus, and Tailwind CSS. It is compiled to WebAssembly and hosted statically on GitHub Pages.
 
-### Automatic Tailwind (Dioxus 0.7+)
+## Philosophy
+* **Offline First, KISS:** Keep it simple, stupid. Tools should work without an internet connection whenever possible.
+* **No Data Harvesting:** Zero unnecessary telemetry. Your data belongs to you.
+* **Stable Experiences:** Built for longevity and stability, favoring official distribution channels (RPM/DEB/Flatpak).
+* **Cross-Platform:** Write once in Rust, deploy to Windows, macOS, Linux, Android, iOS, FreeBSD and the Web.
 
-As of Dioxus 0.7, there no longer is a need to manually install tailwind. Simply `dx serve` and you're good to go!
+## The Roadmap
+NomadLibre is currently a solo operation laying the groundwork for a suite of cross-platform utilities. The future development pipeline includes:
 
-Automatic tailwind is supported by checking for a file called `tailwind.css` in your app's manifest directory (next to Cargo.toml). To customize the file, use the dioxus.toml:
+1. **Personal Finance:** Local-first, secure financial tracking.
+2. **MoveLivre:** An open-source, ad-free transit routing alternative.
+3. **Board Games:** Open-source implementations of Indian Ludo and Snakes & Ladders.
+4. **Mobile Terminal:** A robust terminal built natively for Android and iOS.
+5. **Secure P2P Chat:** Decentralized messaging protocol utilizing SSH keys.
+6. **The Meme App:** The ultimate ad simulator (proceed with caution).
 
-```toml
-[application]
-tailwind_input = "my.css"
-tailwind_output = "assets/out.css" # also customize the location of the out file!
-```
+## Local Development
+To run this website locally, you will need the Rust toolchain and the Dioxus CLI installed.
 
-### Tailwind Manual Install
+`rustup target add wasm32-unknown-unknown`
+`cargo install dioxus-cli`
+`dx serve`
 
-To use tailwind plugins or manually customize tailwind, you can can install the Tailwind CLI and use it directly.
+## Contributing and Team
+NomadLibre is currently maintained by a solo developer. I am in a money crunch and absolutely do not expect free work from anyone (not even interns). If you want to support the project, starring the repositories or sharing the tools is the best way to help.
 
-### Tailwind
-1. Install npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-2. Install the Tailwind CSS CLI: https://tailwindcss.com/docs/installation/tailwind-cli
-3. Run the following command in the root of the project to start the Tailwind CSS compiler:
-
-```bash
-npx @tailwindcss/cli -i ./input.css -o ./assets/tailwind.css --watch
-```
-
-### Serving Your App
-
-Run the following command in the root of your project to start developing with the default platform:
-
-```bash
-dx serve --platform web
-```
-
-To run for a different platform, use the `--platform platform` flag. E.g.
-```bash
-dx serve --platform desktop
-```
-
+## License
+This repository is licensed under the GNU Affero General Public License v3.0 (AGPLv3). See the `LICENSE` file for details.
