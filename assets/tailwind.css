@@ -181,6 +181,9 @@
   .absolute {
     position: absolute;
   }
+  .fixed {
+    position: fixed;
+  }
   .relative {
     position: relative;
   }
@@ -319,11 +322,11 @@
   .bg-\[\#d3869b\] {
     background-color: #d3869b;
   }
+  .bg-\[\#ebdbb2\] {
+    background-color: #ebdbb2;
+  }
   .bg-\[\#fabd2f\] {
     background-color: #fabd2f;
-  }
-  .bg-\[\#fb4934\] {
-    background-color: #fb4934;
   }
   .bg-\[\#fe8019\] {
     background-color: #fe8019;
