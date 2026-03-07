@@ -8,6 +8,8 @@ fn main() {
 #[component]
 fn App() -> Element {
     rsx! {
+
+        document::Title { "NomadLibre" }
         // Viewport tag for mobile responsiveness
         document::Meta { name: "viewport", content: "width=device-width, initial-scale=1.0" }
 
@@ -56,6 +58,7 @@ fn App() -> Element {
                                 li { a { href: "#", class: "block px-4 py-3 hover:bg-[#3c3836] hover:text-[#fabd2f] border-b-4 border-[#1d2021] font-bold", "Mobile Terminal" } }
                                 li { a { href: "#", class: "block px-4 py-3 hover:bg-[#3c3836] hover:text-[#fabd2f] border-b-4 border-[#1d2021] font-bold", "Secure P2P Chat" } }
                                 li { a { href: "#", class: "block px-4 py-3 hover:bg-[#3c3836] hover:text-[#fabd2f] font-bold", "The Meme App" } }
+                                li { a { href: "#", class: "block px-4 py-3 hover:bg-[#3c3836] hover:text-[#fabd2f] font-bold", "OpenSplitwise" } }
                             }
                         }
                     }
@@ -86,19 +89,19 @@ fn App() -> Element {
                     // Block 1 - Gruvbox Blue
                     div { class: "border-4 border-[#1d2021] bg-[#83a598] text-[#282828] p-8 shadow-[8px_8px_0px_0px_#1d2021] md:col-span-2",
                         h2 { class: "text-3xl font-bold mb-2 uppercase", "Why Rust?" }
-                        p { class: "font-bold", "I needed a stack that compiles to everything: Win, Mac, Linux (RPM/DEB/Flatpak), FreeBSD, iOS, Android, and WebAssembly. Memory safety is just a bonus." }
+                        p { class: "font-bold", "We needed a stack that compiles to everything: Win, Mac, Linux (RPM/DEB/Flatpak), FreeBSD, iOS, Android, and WebAssembly. Memory safety is just a bonus." }
                     }
 
                     // Block 2 - Neutral Beige (Solo Dev / Hiring)
                     div { class: "border-4 border-[#1d2021] bg-[#ebdbb2] text-[#282828] p-8 shadow-[8px_8px_0px_0px_#1d2021]",
-                        h2 { class: "text-2xl font-bold mb-2 uppercase", "Team Size: 1" }
-                        p { class: "font-bold", "I am a solo developer currently in a bit of a money crunch. I absolutely do not expect free work (not even for an intern!), so it is just me building this out right now. If you want to support, starring the repos helps a lot!" }
+                        h2 { class: "text-2xl font-bold mb-2 uppercase", "Team Size: 2" }
+                        p { class: "font-bold", "We are a developer+designer duo building this on a tight budget. We do not believe in unpaid work, so it's us writing the code. If you want to support us, please star the repos!" }
                     }
 
                     // Block 3 - Gruvbox Green (Tutorials)
                     div { class: "border-4 border-[#1d2021] bg-[#b8bb26] text-[#282828] p-8 shadow-[8px_8px_0px_0px_#1d2021]",
                         h2 { class: "text-2xl font-bold mb-2 uppercase", "Tutorials & Docs" }
-                        p { class: "font-bold", "I will add video tutorials for consumers and comprehensive documentation right here once the products are actually ready." }
+                        p { class: "font-bold", "We will add video tutorials for consumers and comprehensive documentation right here once the products are actually ready." }
                     }
 
                     // Block 4 - Gruvbox Purple (Philosophy)
@@ -111,7 +114,7 @@ fn App() -> Element {
                 // Broken Website Acknowledgment Banner - Gruvbox Orange
                 footer { class: "border-4 border-[#1d2021] bg-[#fe8019] text-[#282828] p-6 shadow-[8px_8px_0px_0px_#1d2021] text-center",
                     p { class: "font-bold text-xl uppercase", "Disclaimer" }
-                    p { class: "font-bold mt-2", "Yes, I am fully aware that some parts of this website might look a bit broken. I am a newbie Rust dev trying to center divs and draw boxes. Please cut me some slack.>.<" }
+                    p { class: "font-bold mt-2", "Yes, We am fully aware that some parts of this website might look a bit broken. One of us is newbie Rust dev trying to center divs and draw boxes. Please cut us some slack. >.<" }
                 }
             }
         }
